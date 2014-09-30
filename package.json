@@ -1,0 +1,15 @@
+{
+  "name": "Gridify",
+  "version": "0.0.1",
+  "description": "Responsive grid in angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "ecstatic": "~0.5.4",
+    "reload": "0.0.2"
+  }
+}

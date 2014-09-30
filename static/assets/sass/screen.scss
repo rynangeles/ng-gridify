@@ -1,0 +1,41 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// @import "compass/reset";
+
+section{
+	margin-top: 20px;
+}
+nav{
+	ul{
+		li:first-child{
+			line-height: 40px;
+			padding-right: 10px;
+		}
+	}
+}
+.item{
+	background-color: lighten(#EEE, 5%);
+	padding: 10px;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px; 
+	.productFace{
+		text-align: center;
+		padding: 15px;
+		background-color: #FFF;
+		&.ad{
+			padding: 0;
+		}
+	}
+	[class*="fa-"]{
+	 	color: #428bca;
+	 	font-size: 17px;   
+	}
+}
+.loader{
+	text-align: center;
+	padding: 10px;
+}
