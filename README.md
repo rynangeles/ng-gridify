@@ -1,7 +1,7 @@
 Gridify Directive
 ====
 
-#### Simple griding directive that accepts dymanic or static array content the renders in grid with responsiveness.
+#### Simple griding directive that accepts dymanic or static array content that renders in grid with responsiveness.
 
 ###### Attributes:
 
