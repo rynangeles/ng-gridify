@@ -2,7 +2,7 @@ Gridify Directive
 ====
 
 Attributes:
-
+----
 gridify : accepts array data to be displayed in resposive grid
 gridifyGutter : padding on all side of each grid. default is 10
 gridifyColMaxWidth : maximum width to determine when to add or subtract columns. default is 200
