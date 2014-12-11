@@ -13,7 +13,13 @@ openBeer.config([
         $urlRouterProvider.otherwise('/');
 
         $stateProvider.state('beer',{
-            url: '/?dynamic',
+            url: '/',
+            templateUrl: '/assets/javascripts/app/partials/beers.html',
+            controller: 'BeerCtrl'
+        });
+
+        $stateProvider.state('beer.dynamic',{
+            url: 'dynamic',
             templateUrl: '/assets/javascripts/app/partials/beers.html',
             controller: 'BeerCtrl'
         });
@@ -23,7 +29,26 @@ openBeer.config([
 openBeer.factory('BeerService',[
     '$resource',
     function ($resource){
-        return $resource('/open_beer', {});
+        return $resource('http://api.openbeerdatabase.com/v1/beers.json', {
+            callback : 'JSON_CALLBACK'
+        },{
+            getBeers: {
+                method : "JSONP",
+                isArray: true,
+                transformResponse: function(data, header){
+                    return data.beers;
+                }
+            }
+        });
+    }
+]);
 
+openBeer.run([
+    '$rootScope', 
+    '$location', 
+    function ($rootScope, $location) {
+        $rootScope.$on('$stateChangeSuccess', function (e, current) {
+            $rootScope.dynamicContent = current.name === 'beer.dynamic';
+        });
     }
 ]);

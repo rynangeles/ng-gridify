@@ -1,4 +1,4 @@
-<section ng-if="dynamic" unli-scroll="feeds.nextPageFeed()" 
+<section ng-if="dynamicContent" unli-scroll="feeds.nextPageFeed()" 
 	unli-scroll-disabled="feeds.busy">
 	<div gridify="feeds.beers" 
 		gridify-col-max-width="250"
@@ -6,7 +6,7 @@
 	</div>
 </section>
 <div class="loader" ng-show="feeds.busy"><img ng-src="/assets/images/loader.gif"></div>
-<div ng-if="!dynamic" gridify="feeds"
+<div ng-if="!dynamicContent" gridify="feeds"
 	gridify-col-max-width="250"
 	gridify-template-url="feedTemplate">
 </div>
