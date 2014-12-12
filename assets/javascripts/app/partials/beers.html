@@ -5,7 +5,7 @@
 		gridify-template-url="feedTemplate">
 	</div>
 </section>
-<div class="loader" ng-show="feeds.busy"><img ng-src="/assets/images/loader.gif"></div>
+<div class="loader" ng-show="feeds.busy"><img ng-src="{{BASE_URL}}/assets/images/loader.gif"></div>
 <div ng-if="!dynamicContent" gridify="feeds"
 	gridify-col-max-width="250"
 	gridify-template-url="feedTemplate">
