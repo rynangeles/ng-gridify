@@ -6,21 +6,24 @@ var openBeer = angular.module('openBeerApp',[
 	'gridify'
 ]);
 
+openBeer.constant('BASE_URL','/ng-gridify');
+
 openBeer.config([
     '$urlRouterProvider',
     '$stateProvider',
-    function($urlRouterProvider, $stateProvider){
+    'BASE_URL',
+    function($urlRouterProvider, $stateProvider, BASE_URL){
         $urlRouterProvider.otherwise('/');
 
         $stateProvider.state('beer',{
             url: '/',
-            templateUrl: '/assets/javascripts/app/partials/beers.html',
+            templateUrl: BASE_URL + '/assets/javascripts/app/partials/beers.html',
             controller: 'BeerCtrl'
         });
 
         $stateProvider.state('beer.dynamic',{
             url: 'dynamic',
-            templateUrl: '/assets/javascripts/app/partials/beers.html',
+            templateUrl: BASE_URL + '/assets/javascripts/app/partials/beers.html',
             controller: 'BeerCtrl'
         });
     }
